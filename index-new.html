@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--
+        CONSENT MODE DEFAULT. This block must stay ABOVE the GTM snippet.
+        It tells Google tags that nothing may be stored until the visitor chooses.
+        Section author: Pandi (AI-assisted with Claude, see group AI log).
+    -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'wait_for_update': 500
+        });
+
+        // If the visitor already chose Accept on an earlier visit, restore it.
+        try {
+            if (localStorage.getItem('aurelia_consent') === 'granted') {
+                gtag('consent', 'update', { 'analytics_storage': 'granted' });
+            }
+        } catch (e) { /* storage blocked, so consent stays denied */ }
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WC5PXGBC');</script>
+    <!-- End Google Tag Manager -->
+
+    <!--
+        COLOUR MODE. Applies the saved (or device) light/dark choice before the page paints.
+        Uses Bootstrap 5.3 colour modes (data-bs-theme on <html>).
+        Section author: [your name] (AI-assisted with Claude, see group AI log).
+    -->
+    <script>
+        (function () {
+            var theme = null;
+            try { theme = localStorage.getItem('aurelia-theme'); } catch (e) {}
+            if (theme !== 'light' && theme !== 'dark') {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-bs-theme', theme);
+        })();
+    </script>
+
+    <title>Aurelia Christmas 2026 | Her Year in Charms</title>
+    <meta name="description" content="This Christmas, wrap the moments that defined her year. Build a custom four-charm bracelet with Aurelia's Christmas Story Edition. Fictional brand for a college assignment.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aurelia Christmas 2026 | Her Year in Charms">
+    <meta property="og:description" content="Pick up to four charms that tell the story of her year and preview her Christmas bracelet live. Fictional brand made for a college assignment.">
+    <meta name="theme-color" content="#2B1B2A">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%23B8864B' stroke-width='4'/%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Aurelia Christmas 2026 - Her Year in Charms",
+        "description": "A fictional Christmas campaign landing page for a charm bracelet brand, built for a college assignment.",
+        "inLanguage": "en-IE"
+    }
+    </script>
+
+    <style>
+        /* ---------- Design tokens ---------- */
+        :root {
+            --plum: #2B1B2A;
+            --plum-soft: #43304A;
+            --pearl: #F7F1EE;
+            --blush: #EBD7D2;
+            --brass: #B8864B;
+            --brass-deep: #8A5A22;
+            --muted: #5E4F5C;
+            --muted-on-plum: #D9C8CF;
+
+            --bs-body-font-family: 'Public Sans', system-ui, sans-serif;
+            --bs-body-bg: var(--pearl);
+            --bs-body-color: var(--plum);
+            --bs-body-line-height: 1.65;
+            --bs-link-color: var(--brass-deep);
+            --bs-link-hover-color: var(--plum);
+        }
+
+        h1, h2, h3, .brand-mark {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        h1 { font-size: clamp(2.3rem, 5.2vw, 3.9rem); line-height: 1.08; }
+        h2 { font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.15; }
+        h3 { font-size: 1.25rem; }
+
+        section[id] { scroll-margin-top: 72px; }
+        .measure { max-width: 34rem; }
+
+        :focus-visible { outline: 3px solid var(--brass-deep); outline-offset: 3px; }
+        .on-plum :focus-visible, .navbar :focus-visible, footer :focus-visible { outline-color: var(--brass); }
+
+        /* ---------- Campaign Badge ---------- */
+        .campaign-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.9rem;
+            border: 1px solid rgba(184, 134, 75, 0.65);
+            border-radius: 999px;
+            background: rgba(184, 134, 75, 0.14);
+            color: #F3D3A7;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        /* ---------- Buttons ---------- */
+        .btn-aurelia {
+            --bs-btn-color: var(--pearl);
+            --bs-btn-bg: var(--plum);
+            --bs-btn-border-color: var(--plum);
+            --bs-btn-hover-color: var(--plum);
+            --bs-btn-hover-bg: var(--brass);
+            --bs-btn-hover-border-color: var(--brass);
+            --bs-btn-active-color: var(--plum);
+            --bs-btn-active-bg: var(--brass);
+            --bs-btn-active-border-color: var(--brass);
+            --bs-btn-border-radius: 0.25rem;
+            --bs-btn-padding-x: 1.6rem;
+            --bs-btn-padding-y: 0.8rem;
+            --bs-btn-font-weight: 600;
+        }
+        .btn-brass {
+            --bs-btn-color: var(--plum);
+            --bs-btn-bg: var(--brass);
+            --bs-btn-border-color: var(--brass);
+            --bs-btn-hover-color: var(--plum);
+            --bs-btn-hover-bg: #D0A06A;
+            --bs-btn-hover-border-color: #D0A06A;
+            --bs-btn-active-color: var(--plum);
+            --bs-btn-active-bg: #D0A06A;
+            --bs-btn-border-radius: 0.25rem;
+            --bs-btn-padding-x: 1.6rem;
+            --bs-btn-padding-y: 0.8rem;
+            --bs-btn-font-weight: 600;
+        }
+
+        /* ---------- Navbar and hero ---------- */
+        .navbar { background: var(--plum); }
+        .brand-mark { font-size: 1.6rem; color: var(--pearl); }
+        .navbar .nav-link { color: var(--muted-on-plum); }
+        .navbar .nav-link:hover { color: var(--pearl); }
+
+        .navbar .nav-link.nav-build-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 1rem;
+            padding: 0.72rem 1.2rem;
+            border: 1px solid #F07835;
+            border-radius: 0.3rem;
+            background: #F07835;
+            color: #241821;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.025em;
+            line-height: 1.2;
+            white-space: nowrap;
+            transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+        }
+        .navbar .nav-link.nav-build-btn:hover,
+        .navbar .nav-link.nav-build-btn:focus-visible {
+            background: #FF9455;
+            border-color: #FF9455;
+            color: #241821;
+            transform: translateY(-1px);
+        }
+        .navbar .nav-link.nav-build-btn:focus-visible {
+            outline: 3px solid var(--pearl);
+            outline-offset: 3px;
+        }
+        @media (max-width: 767.98px) {
+            .navbar .nav-link.nav-build-btn {
+                display: flex;
+                width: fit-content;
+                margin: 0.65rem 0 0.5rem;
+                padding: 0.8rem 1.2rem;
+            }
+            .navbar .navbar-nav { padding-top: 0.5rem; padding-bottom: 0.65rem; }
+        }
+
+        .hero { position: relative; background: var(--plum); color: var(--pearl); padding: 4rem 0 5rem; }
+        .hero .container { position: relative; z-index: 1; }
+        .hero .lead { color: var(--muted-on-plum); font-size: 1.15rem; }
+        .hero-art { width: 100%; max-width: 480px; height: auto; }
+        .hero .btn-link { color: var(--muted-on-plum); }
+        .hero .btn-link:hover { color: var(--pearl); }
+
+        /* ---------- Snow & Bauble Motion ---------- */
+        .snow { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+        .snow span {
+            position: absolute;
+            top: -12px;
+            left: var(--x);
+            width: var(--s);
+            height: var(--s);
+            border-radius: 50%;
+            background: #F7F1EE;
+            opacity: 0.5;
+            animation: snowfall var(--t) linear var(--d) infinite;
+        }
+        @keyframes snowfall {
+            to { transform: translate(26px, 620px); }
+        }
+        .bauble-swing-left {
+            transform-box: fill-box;
+            transform-origin: 50% 0%;
+            animation: swingLeft 4.8s ease-in-out infinite;
+        }
+        .bauble-swing-right {
+            transform-box: fill-box;
+            transform-origin: 50% 0%;
+            animation: swingRight 5.4s ease-in-out 0.7s infinite;
+        }
+        .holly-pulse {
+            transform-box: fill-box;
+            transform-origin: 50% 65%;
+            animation: hollySway 6s ease-in-out infinite;
+        }
+        .sparkle-twinkle {
+            transform-box: fill-box;
+            transform-origin: center;
+            animation: twinkle 3.6s ease-in-out infinite;
+        }
+        @keyframes swingLeft {
+            0%, 100% { transform: rotate(-3.5deg); }
+            50% { transform: rotate(3.5deg); }
+        }
+        @keyframes swingRight {
+            0%, 100% { transform: rotate(3deg); }
+            50% { transform: rotate(-3deg); }
+        }
+        @keyframes hollySway {
+            0%, 100% { transform: rotate(-1.5deg); }
+            50% { transform: rotate(1.5deg); }
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.45; transform: scale(0.95); }
+            50% { opacity: 0.9; transform: scale(1.06); }
+        }
+
+        /* ---------- Steps ---------- */
+        .step-number {
+            width: 2.5rem; height: 2.5rem; border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--plum); color: var(--pearl); font-weight: 600;
+        }
+
+        /* ---------- Editorial Lookbook ("Under the Tree") ---------- */
+        .lookbook { border-top: 1px solid rgba(184, 134, 75, 0.28); }
+        .lookbook-eyebrow {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--brass-deep);
+            margin-bottom: 0.5rem;
+        }
+        .lookbook-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(184, 134, 75, 0.45);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 26px rgba(43, 27, 42, 0.06);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .lookbook-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--brass);
+            box-shadow: 0 16px 34px rgba(43, 27, 42, 0.12);
+        }
+        .lookbook-media {
+            position: relative;
+            aspect-ratio: 3 / 4;
+            width: 100%;
+            overflow: hidden;
+            background: var(--plum);
+            border-bottom: 1px solid rgba(184, 134, 75, 0.35);
+        }
+        .lookbook-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .lookbook-card:hover .lookbook-media img {
+            transform: scale(1.03);
+        }
+        .lookbook-tag {
+            position: absolute;
+            top: 0.85rem;
+            left: 0.85rem;
+            padding: 0.25rem 0.65rem;
+            border-radius: 999px;
+            background: rgba(43, 27, 42, 0.82);
+            border: 1px solid rgba(184, 134, 75, 0.65);
+            color: #F3D3A7;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            backdrop-filter: blur(4px);
+        }
+        .lookbook-body {
+            padding: 1.35rem 1.4rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .lookbook-body h3 { margin-bottom: 0.45rem; }
+        .lookbook-body p { color: var(--muted); font-size: 0.95rem; margin-bottom: 0; }
+
+        /* ---------- Builder ---------- */
+        .builder { background: var(--blush); }
+        .builder-card { background: var(--pearl); border-radius: 0.5rem; padding: 2rem; }
+        .chain { fill: none; stroke: var(--brass); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 9 6; }
+        .slot-ring { fill: var(--pearl); stroke: var(--brass); stroke-width: 2; stroke-dasharray: 4 4; }
+        .slot.filled .slot-ring { fill: var(--brass); stroke-dasharray: none; }
+        .slot .slot-icon { display: none; color: var(--plum); }
+        .slot.filled .slot-icon { display: block; }
+        .slot.pop { animation: pop 0.35s ease-out; transform-box: fill-box; transform-origin: center; }
+        @keyframes pop { 0% { transform: scale(0.6); } 70% { transform: scale(1.12); } 100% { transform: scale(1); } }
+
+        .story-line { min-height: 3.5rem; font-family: 'Fraunces', Georgia, serif; font-size: 1.2rem; color: var(--plum); }
+
+        .charm-btn {
+            display: flex; align-items: center; gap: 0.9rem; width: 100%; height: 100%;
+            text-align: left; padding: 0.9rem; background: var(--pearl);
+            border: 2px solid transparent; border-radius: 0.4rem; color: var(--plum);
+        }
+        .charm-btn:hover { border-color: var(--brass); }
+        .charm-btn[aria-pressed="true"] { border-color: var(--plum); background: #fff; }
+        .charm-btn .charm-disc {
+            flex: 0 0 auto; width: 2.75rem; height: 2.75rem; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            background: var(--blush); color: var(--plum);
+        }
+        .charm-btn[aria-pressed="true"] .charm-disc { background: var(--brass); }
+        .charm-name { font-weight: 600; display: block; }
+        .charm-meta { font-size: 0.85rem; color: var(--muted); display: block; }
+
+        /* ---------- Occasions, FAQ ---------- */
+        .occasion { border-top: 2px solid var(--plum); padding-top: 0.9rem; height: 100%; }
+        .occasion p { color: var(--muted); margin-bottom: 0; }
+
+        .accordion { --bs-accordion-bg: transparent; --bs-accordion-btn-bg: transparent;
+            --bs-accordion-active-bg: var(--blush); --bs-accordion-active-color: var(--plum);
+            --bs-accordion-border-color: rgba(43, 27, 42, 0.25); }
+        .accordion-button { font-weight: 600; }
+
+        /* ---------- Footer and consent ---------- */
+        footer { background: var(--plum); color: var(--muted-on-plum); padding: 3rem 0; }
+        footer .btn-link { color: var(--pearl); }
+
+        #consent-banner {
+            position: fixed; left: 0; right: 0; bottom: 0; z-index: 1080;
+            background: var(--pearl); border-top: 3px solid var(--plum);
+            padding: 1rem 0; box-shadow: 0 -8px 24px rgba(43, 27, 42, 0.18);
+        }
+        .consent-btn { min-width: 7.5rem; }
+
+        /* ---------- Dark / light switch ---------- */
+        .theme-toggle {
+            width: 2.5rem; height: 2.5rem; padding: 0;
+            display: inline-flex; align-items: center; justify-content: center;
+            border: 1px solid rgba(184, 134, 75, 0.6); border-radius: 50%;
+            background: transparent; color: var(--muted-on-plum);
+        }
+        .theme-toggle:hover { color: var(--pearl); border-color: var(--brass); }
+        .theme-toggle svg { width: 1.1rem; height: 1.1rem; }
+        .theme-toggle .icon-sun { display: none; }
+        html[data-bs-theme="dark"] .theme-toggle .icon-sun { display: block; }
+        html[data-bs-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+        /* ---------- Newsletter ---------- */
+        .newsletter { background: var(--blush); }
+        .newsletter .form-control { border-color: rgba(43, 27, 42, 0.35); padding: 0.8rem 1rem; }
+        .newsletter .form-control:focus,
+        .newsletter .form-check-input:focus { border-color: var(--brass-deep); box-shadow: 0 0 0 0.2rem rgba(184, 134, 75, 0.3); }
+        .newsletter .form-check-input { border-color: var(--plum); }
+        .newsletter .form-check-input:checked { background-color: var(--plum); border-color: var(--plum); }
+        .newsletter-success { border-left: 4px solid var(--brass); background: var(--pearl); padding: 1.25rem 1.5rem; }
+
+        /* ---------- Dark mode palette ---------- */
+        html[data-bs-theme="dark"] {
+            --bs-body-bg: #160F16;
+            --bs-body-color: #F1E7EA;
+            --bs-link-color: #D9A86C;
+            --bs-link-hover-color: #F7F1EE;
+            --muted: #C5B4BF;
+            --surface-dark: #221822;
+            --surface-dark-2: #2E2130;
+        }
+        html[data-bs-theme="dark"] :focus-visible { outline-color: var(--brass); }
+        html[data-bs-theme="dark"] .step-number { background: var(--brass); color: var(--plum); }
+        html[data-bs-theme="dark"] .lookbook { border-top-color: rgba(184, 134, 75, 0.22); }
+        html[data-bs-theme="dark"] .lookbook-eyebrow { color: #D9A86C; }
+        html[data-bs-theme="dark"] .lookbook-card {
+            background: var(--surface-dark);
+            border-color: rgba(184, 134, 75, 0.42);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+        }
+        html[data-bs-theme="dark"] .lookbook-card:hover {
+            border-color: var(--brass);
+            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.48);
+        }
+        html[data-bs-theme="dark"] .builder,
+        html[data-bs-theme="dark"] .newsletter { background: var(--surface-dark); }
+        html[data-bs-theme="dark"] .builder-card { background: var(--bs-body-bg); }
+        html[data-bs-theme="dark"] .slot-ring { fill: var(--surface-dark-2); }
+        html[data-bs-theme="dark"] .slot.filled .slot-ring { fill: var(--brass); }
+        html[data-bs-theme="dark"] .story-line { color: var(--bs-body-color); }
+        html[data-bs-theme="dark"] .charm-btn { background: var(--surface-dark); color: var(--bs-body-color); }
+        html[data-bs-theme="dark"] .charm-btn[aria-pressed="true"] { background: var(--surface-dark-2); border-color: var(--brass); }
+        html[data-bs-theme="dark"] .charm-btn .charm-disc { background: var(--surface-dark-2); color: var(--bs-body-color); }
+        html[data-bs-theme="dark"] .charm-btn[aria-pressed="true"] .charm-disc { background: var(--brass); color: var(--plum); }
+        html[data-bs-theme="dark"] .occasion { border-top-color: var(--brass); }
+        html[data-bs-theme="dark"] .accordion {
+            --bs-accordion-active-bg: var(--surface-dark-2);
+            --bs-accordion-active-color: var(--bs-body-color);
+            --bs-accordion-border-color: rgba(241, 231, 234, 0.2);
+        }
+        html[data-bs-theme="dark"] .accordion-button::after {
+            --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23F1E7EA' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+            --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23D9A86C' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+        }
+        html[data-bs-theme="dark"] .btn-aurelia {
+            --bs-btn-color: var(--plum);
+            --bs-btn-bg: var(--pearl);
+            --bs-btn-border-color: var(--pearl);
+        }
+        html[data-bs-theme="dark"] #consent-banner { background: var(--surface-dark); border-top-color: var(--brass); }
+        html[data-bs-theme="dark"] .newsletter .form-control { border-color: rgba(241, 231, 234, 0.3); }
+        html[data-bs-theme="dark"] .newsletter .form-check-input { border-color: var(--brass); }
+        html[data-bs-theme="dark"] .newsletter .form-check-input:checked { background-color: var(--brass); border-color: var(--brass); }
+        html[data-bs-theme="dark"] .newsletter-success { background: var(--bs-body-bg); }
+
+        @media (prefers-reduced-motion: reduce) {
+            .snow,
+            .bauble-swing-left,
+            .bauble-swing-right,
+            .holly-pulse,
+            .sparkle-twinkle { display: none; }
+            .slot.pop { animation: none; }
+            * { transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WC5PXGBC"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Charm icons, drawn once and reused with <use>. Author: Pandi (AI-assisted). -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="ic-foot" viewBox="0 0 24 24">
+            <ellipse cx="12" cy="15.5" rx="5" ry="6" fill="currentColor"/>
+            <circle cx="7.3" cy="8" r="1.7" fill="currentColor"/>
+            <circle cx="10.6" cy="5.6" r="1.7" fill="currentColor"/>
+            <circle cx="14.2" cy="5.6" r="1.7" fill="currentColor"/>
+            <circle cx="17.2" cy="8" r="1.7" fill="currentColor"/>
+        </symbol>
+        <symbol id="ic-heart" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 21s-7-4.6-9.2-9.1C1.3 8.8 3.1 5 6.7 5c2.1 0 3.6 1.2 5.3 3.2C13.7 6.2 15.2 5 17.3 5c3.6 0 5.4 3.8 3.9 6.9C19 16.4 12 21 12 21z"/>
+        </symbol>
+        <symbol id="ic-date" viewBox="0 0 24 24">
+            <rect x="4" y="5.5" width="16" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M4 10h16M8.5 3.5v4M15.5 3.5v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="12" cy="14.7" r="1.8" fill="currentColor"/>
+        </symbol>
+        <symbol id="ic-bloom" viewBox="0 0 24 24">
+            <circle cx="12" cy="6.8" r="3.2" fill="currentColor"/>
+            <circle cx="16.95" cy="10.4" r="3.2" fill="currentColor"/>
+            <circle cx="15.06" cy="16.2" r="3.2" fill="currentColor"/>
+            <circle cx="8.94" cy="16.2" r="3.2" fill="currentColor"/>
+            <circle cx="7.05" cy="10.4" r="3.2" fill="currentColor"/>
+            <circle cx="12" cy="12" r="2" fill="currentColor"/>
+        </symbol>
+        <symbol id="ic-star" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 2.5l2.8 6.2 6.7.8-5 4.6 1.3 6.6L12 17.4l-5.8 3.3 1.3-6.6-5-4.6 6.7-.8z"/>
+        </symbol>
+        <symbol id="ic-home" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 3.5L3 11h2.5v8.5h5v-5h3v5h5V11H21L12 3.5z"/>
+        </symbol>
+        <symbol id="ic-compass" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <polygon points="15.8,8.2 13.4,13.4 8.2,15.8 10.6,10.6" fill="currentColor"/>
+        </symbol>
+        <symbol id="ic-moon" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M14.8 3.2A9 9 0 1 0 20.8 15a7.2 7.2 0 0 1-6-11.8z"/>
+        </symbol>
+    </svg>
+
+    <!-- ===== Navigation. Author: Pandi (AI-assisted) ===== -->
+    <nav class="navbar navbar-expand-md sticky-top" data-bs-theme="dark" aria-label="Main">
+        <div class="container">
+            <a class="navbar-brand brand-mark" href="#top">Aurelia</a>
+
+            <div class="d-flex align-items-center gap-2 ms-auto ms-md-3 order-md-last">
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode">
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                        <path d="M7 8a3.5 3.5 0 0 1 3.5 3.555.5.5 0 0 0 .625.492A1.503 1.503 0 0 1 13 13.5a1.5 1.5 0 0 1-1.5 1.5H3a2 2 0 1 1 .1-3.998.5.5 0 0 0 .509-.375A3.5 3.5 0 0 1 7 8m4.473 3a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5z"/>
+                        <path d="M11.286 1.778a.5.5 0 0 0-.565-.755 4.595 4.595 0 0 0-3.18 5.003 5.5 5.5 0 0 1 1.055.209A3.6 3.6 0 0 1 9.83 2.617a4.593 4.593 0 0 0 4.31 5.744 3.58 3.58 0 0 1-2.241.634q.244.477.394 1a4.59 4.59 0 0 0 3.624-2.04.5.5 0 0 0-.565-.755 3.593 3.593 0 0 1-4.065-5.422z"/>
+                    </svg>
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                        <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+                    </svg>
+                </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Open menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#how">How it works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#lookbook">Lookbook</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#occasions">Christmas Gifting</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">Questions</a></li>
+                    <li class="nav-item"><a class="nav-link nav-build-btn js-cta" href="#builder" aria-label="Build her Christmas bracelet - jump to the bracelet builder">Build her Christmas gift</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="top">
+
+        <!-- ===== Hero - Christmas Campaign ("Her Year in Charms"). Author: Pandi (AI-assisted) ===== -->
+        <section class="hero on-plum" aria-labelledby="hero-title">
+            <div class="snow" aria-hidden="true">
+                <span style="--x:4%;--s:5px;--t:11s;--d:-2s"></span>
+                <span style="--x:11%;--s:4px;--t:14s;--d:-7s"></span>
+                <span style="--x:19%;--s:6px;--t:12s;--d:-4s"></span>
+                <span style="--x:27%;--s:4px;--t:16s;--d:-9s"></span>
+                <span style="--x:35%;--s:5px;--t:13s;--d:-1s"></span>
+                <span style="--x:43%;--s:6px;--t:15s;--d:-6s"></span>
+                <span style="--x:51%;--s:4px;--t:12s;--d:-10s"></span>
+                <span style="--x:59%;--s:5px;--t:14s;--d:-3s"></span>
+                <span style="--x:67%;--s:6px;--t:11s;--d:-8s"></span>
+                <span style="--x:74%;--s:4px;--t:16s;--d:-5s"></span>
+                <span style="--x:82%;--s:5px;--t:13s;--d:-11s"></span>
+                <span style="--x:89%;--s:6px;--t:15s;--d:-0s"></span>
+                <span style="--x:95%;--s:4px;--t:12s;--d:-6s"></span>
+                <span style="--x:48%;--s:3px;--t:17s;--d:-12s"></span>
+            </div>
+            <div class="container">
+                <div class="row align-items-center gy-5 gx-lg-5">
+                    <div class="col-lg-6">
+                        <span class="campaign-badge">Christmas 2026 Campaign &bull; Her Year in Charms</span>
+                        <h1 id="hero-title">This Christmas, wrap the moments that made her year.</h1>
+                        <p class="lead measure mt-4 mb-4">Skip the guesswork under the tree. Choose up to four Aurelia charms that capture the milestones, people, and memories that shaped her 2026—and watch her Christmas story take shape live.</p>
+                        <!-- GTM tracks clicks on this button through its ID (cta-button) -->
+                        <a id="cta-button" class="btn btn-brass btn-lg js-cta" href="#builder">Build her Christmas bracelet</a>
+                        <a class="btn btn-link btn-lg ms-2" href="#how">How it works</a>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <svg class="hero-art" viewBox="0 0 520 520" role="img" aria-label="Illustration of an Aurelia Christmas gold charm bracelet with four charms: a footprint, a heart, a calendar and a flower, surrounded by falling snow, holly and swinging baubles.">
+                            <circle cx="260" cy="260" r="170" fill="none" stroke="#B8864B" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 7"/>
+                            <circle cx="260" cy="260" r="150" fill="none" stroke="#43304A" stroke-width="2"/>
+                            <circle cx="260" cy="90" r="9" fill="#B8864B"/>
+                            <g fill="#F7F1EE">
+                                <circle cx="370.8" cy="390.2" r="32"/><circle cx="318.3" cy="425.6" r="32"/>
+                                <circle cx="221.7" cy="425.6" r="32"/><circle cx="149.2" cy="390.2" r="32"/>
+                            </g>
+                            <g style="color:#2B1B2A">
+                                <use href="#ic-foot" x="352.8" y="372.2" width="36" height="36"/>
+                                <use href="#ic-heart" x="300.3" y="407.6" width="36" height="36"/>
+                                <use href="#ic-date" x="203.7" y="407.6" width="36" height="36"/>
+                                <use href="#ic-bloom" x="131.2" y="372.2" width="36" height="36"/>
+                            </g>
+                            <g aria-hidden="true">
+                                <g class="holly-pulse">
+                                    <path d="M260 78C230 44 190 48 176 72 198 84 238 90 260 78z" fill="#2F6B4F"/>
+                                    <path d="M260 78C290 44 330 48 344 72 322 84 282 90 260 78z" fill="#3E8460"/>
+                                    <circle cx="252" cy="82" r="9" fill="#B3263A"/><circle cx="269" cy="84" r="9" fill="#C9354A"/><circle cx="260" cy="72" r="9" fill="#B3263A"/>
+                                </g>
+                                <g class="bauble-swing-left">
+                                    <path d="M96 40v46" stroke="#B8864B" stroke-width="2"/>
+                                    <rect x="88" y="82" width="16" height="9" rx="2" fill="#B8864B"/>
+                                    <circle cx="96" cy="114" r="26" fill="#B3263A"/>
+                                    <path d="M82 104a20 20 0 0 1 14-10" stroke="#F7F1EE" stroke-width="3" fill="none" stroke-linecap="round" opacity=".6"/>
+                                </g>
+                                <g class="bauble-swing-right">
+                                    <path d="M430 30v60" stroke="#B8864B" stroke-width="2"/>
+                                    <rect x="422" y="86" width="16" height="9" rx="2" fill="#B8864B"/>
+                                    <circle cx="430" cy="118" r="26" fill="#2F6B4F"/>
+                                    <path d="M416 108a20 20 0 0 1 14-10" stroke="#F7F1EE" stroke-width="3" fill="none" stroke-linecap="round" opacity=".6"/>
+                                </g>
+                                <g class="sparkle-twinkle" stroke="#F7F1EE" stroke-width="2" stroke-linecap="round" opacity=".7">
+                                    <path d="M60 230v32M44 246h32M49 235l22 22M71 235L49 257"/>
+                                    <path d="M470 270v28M456 284h28M460 274l20 20M480 274L460 294"/>
+                                    <path d="M120 470v24M108 482h24M111 473l18 18M129 473l-18 18"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== How it works. Author: Pandi (AI-assisted) ===== -->
+        <section id="how" class="py-5" aria-labelledby="how-title">
+            <div class="container py-4">
+                <h2 id="how-title" class="mb-5">How Her Year in Charms works</h2>
+                <ol class="row g-4 list-unstyled mb-0">
+                    <li class="col-md-4">
+                        <span class="step-number mb-3" aria-hidden="true">1</span>
+                        <h3>Look back on her 2026</h3>
+                        <p class="measure">Pick up to four charms that stand for the moments that mattered most to her this year—from a new home to a cherished family date.</p>
+                    </li>
+                    <li class="col-md-4">
+                        <span class="step-number mb-3" aria-hidden="true">2</span>
+                        <h3>Preview her Christmas bracelet</h3>
+                        <p class="measure">Watch each charm appear on the chain as you build it, alongside a custom keepsake line written for her gift card.</p>
+                    </li>
+                    <li class="col-md-4">
+                        <span class="step-number mb-3" aria-hidden="true">3</span>
+                        <h3>Place it under the tree</h3>
+                        <p class="measure">Give a Christmas morning gift that holds real meaning—and leaves room to add new chapters next year.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ===== Editorial Lookbook - Under the Tree. Author: Pandi (AI-assisted) ===== -->
+        <section id="lookbook" class="lookbook py-5" aria-labelledby="lookbook-title">
+            <div class="container py-4">
+                <div class="row align-items-end mb-5 g-3">
+                    <div class="col-lg-7">
+                        <span class="lookbook-eyebrow">Christmas 2026 Lookbook</span>
+                        <h2 id="lookbook-title" class="mb-2">Under the Tree</h2>
+                        <p class="measure mb-0">Every Aurelia Story Bracelet arrives nestled in signature festive wrapping, hand-tied satin ribbon, and a bespoke keepsake card printed with the chapters you chose.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <figure class="lookbook-card mb-0">
+                            <div class="lookbook-media">
+                                <span class="lookbook-tag">01 &bull; Signature Presentation</span>
+                                <img src="photo-1764270597477-5205a465d2b7.avif" alt="Frosted evergreen Christmas tree lit with warm fairy lights and white baubles above cream gift boxes tied with bronze satin ribbon." loading="lazy">
+                            </div>
+                            <figcaption class="lookbook-body">
+                                <h3>Wrapped in Satin &amp; Gold</h3>
+                                <p>Soft pearl paper, warm bronze ribbon, and a gift box crafted to sit proudly beneath the branches until Christmas morning.</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-md-4">
+                        <figure class="lookbook-card mb-0">
+                            <div class="lookbook-media">
+                                <span class="lookbook-tag">02 &bull; Quiet Anticipation</span>
+                                <img src="photo-1764350994130-fe1e6401fc90.avif" alt="Star-patterned kraft Christmas gift wrapped with shimmering silver-champagne ribbon resting beneath snowy pine branches." loading="lazy">
+                            </div>
+                            <figcaption class="lookbook-body">
+                                <h3>Christmas Morning</h3>
+                                <p>Star-patterned kraft wrap and shimmering ribbon resting under snowy pine boughs ahead of the first unwrapping.</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-md-4">
+                        <figure class="lookbook-card mb-0">
+                            <div class="lookbook-media">
+                                <span class="lookbook-tag">03 &bull; Keepsake Notes</span>
+                                <img src="Unknown.avif" alt="Botanical-printed Christmas gifts tied with satin ribbons and handwritten kraft gift tags beneath a warmly lit tree." loading="lazy">
+                            </div>
+                            <figcaption class="lookbook-body">
+                                <h3>Written in Her Story</h3>
+                                <p>Hand-tied ribbons and kraft tags ready for her 2026 keepsake line beside warm candlelight and pine.</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Bracelet builder. Author: Pandi (AI-assisted) ===== -->
+        <section id="builder" class="builder py-5" aria-labelledby="builder-title">
+            <div class="container py-4">
+                <h2 id="builder-title" class="mb-2">Build her Christmas bracelet</h2>
+                <p class="measure mb-5">Select up to four charms from our Christmas Story Edition to tell the story of her year. Click a charm again to remove it.</p>
+
+                <div class="builder-card">
+                    <div class="row gy-5 gx-lg-5 align-items-center">
+                        <div class="col-lg-5">
+                            <svg viewBox="0 0 480 190" class="w-100" role="img" aria-label="Your Christmas bracelet preview. Charms appear on the chain as you choose them.">
+                                <path class="chain" d="M20 60 Q240 190 460 60"/>
+                                <g class="slot" data-slot="0" transform="translate(108 101.6)"><circle class="slot-ring" r="26"/><use class="slot-icon" href="#ic-heart" x="-14" y="-14" width="28" height="28"/></g>
+                                <g class="slot" data-slot="1" transform="translate(196 122.4)"><circle class="slot-ring" r="26"/><use class="slot-icon" href="#ic-heart" x="-14" y="-14" width="28" height="28"/></g>
+                                <g class="slot" data-slot="2" transform="translate(284 122.4)"><circle class="slot-ring" r="26"/><use class="slot-icon" href="#ic-heart" x="-14" y="-14" width="28" height="28"/></g>
+                                <g class="slot" data-slot="3" transform="translate(372 101.6)"><circle class="slot-ring" r="26"/><use class="slot-icon" href="#ic-heart" x="-14" y="-14" width="28" height="28"/></g>
+                            </svg>
+                            <p class="story-line mt-3 mb-0" id="story-line" aria-live="polite">Pick a charm to write her Christmas gift card story.</p>
+                        </div>
+
+                        <div class="col-lg-7">
+                            <h3 class="mb-3">Choose her 2026 chapters</h3>
+                            <div class="row g-3 mb-4">
+                                <div class="col-sm-6">
+                                    <button type="button" class="charm-btn" aria-pressed="false" data-icon="ic-foot" data-name="First Steps" data-phrase="a first step">
+                                        <span class="charm-disc"><svg width="24" height="24" aria-hidden="true"><use href="#ic-foot"/></svg></span>
+                                        <span><span class="charm-name">First Steps</span><span class="charm-meta">18k gold. For the day it all began.</span></span>
+                                    </button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button type="button" class="charm-btn" aria-pressed="false" data-icon="ic-heart" data-name="Family Bond" data-phrase="a full table">
+                                        <span class="charm-disc"><svg width="24" height="24" aria-hidden="true"><use href="#ic-heart"/></svg></span>
+                                        <span><span class="charm-name">Family Bond</span><span class="charm-meta">Rose gold. For the people around the Christmas table.</span></span>
+                                    </button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button type="button" class="charm-btn" aria-pressed="false" data-icon="ic-date" data-name="Special Date" data-phrase="a day to remember">
+                                        <span class="charm-disc"><svg width="24" height="24" aria-hidden="true"><use href="#ic-date"/></svg></span>
+                                        <span><span class="charm-name">Special Date</span><span class="charm-meta">Sterling silver. For the 2026 date worth keeping.</span></span>
+                                    </button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button type="button" class="charm-btn" aria-pressed="false" data-icon="ic-bloom" data-name="Generations" data-phrase="three generations">
+                                        <span class="charm-disc"><svg width="24" height="24" aria-hidden="true"><use href="#ic-bloom"/></svg></span>
+                                        <span><span class="charm-name">Generations</span><span class="charm-meta">18k gold. For a family that grew this year.</span></span>
+                                    </button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button type="button" class="charm-btn" aria-pressed="false" data-icon="ic-star" data-name="Bright Future" data-phrase="a bold new chapter">
+                                        <span class="charm-disc"><svg width="24" height="24" aria-hidden="true"><use href="#ic-star"/></svg></span>
+                                        <span><span class="charm-name">Bright Future</span><span class="charm-meta">18k gold. For a milestone achieved in 2026.</span></span>
+                                    </button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button type="button" class="charm-btn" aria-pressed="false" data-icon="ic-home" data-name="First Home" data-phrase="a place to call home">
+                                        <span class="charm-disc"><svg width="24" height="24" aria-hidden="true"><use href="#ic-home"/></svg></span>
+                                        <span><span class="charm-name">First Home</span><span class="charm-meta">Rose gold. For her first Christmas in her own place.</span></span>
+                                    </button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button type="button" class="charm-btn" aria-pressed="false" data-icon="ic-compass" data-name="Shared Journey" data-phrase="miles travelled together">
+                                        <span class="charm-disc"><svg width="24" height="24" aria-hidden="true"><use href="#ic-compass"/></svg></span>
+                                        <span><span class="charm-name">Shared Journey</span><span class="charm-meta">Sterling silver. For adventures near and far.</span></span>
+                                    </button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button type="button" class="charm-btn" aria-pressed="false" data-icon="ic-moon" data-name="Guiding Light" data-phrase="quiet strength">
+                                        <span class="charm-disc"><svg width="24" height="24" aria-hidden="true"><use href="#ic-moon"/></svg></span>
+                                        <span><span class="charm-name">Guiding Light</span><span class="charm-meta">18k gold. For always showing the way.</span></span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- GTM tracks clicks on this button through its ID (cta-build) -->
+                            <button id="cta-build" type="button" class="btn btn-aurelia btn-lg js-cta" data-bs-toggle="modal" data-bs-target="#demoModal">Finish her Christmas gift</button>
+                            <button id="reset-charms" type="button" class="btn btn-link">Clear charms</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Christmas Gifting Personas. Author: Pandi (AI-assisted) ===== -->
+        <section id="occasions" class="py-5" aria-labelledby="occasions-title">
+            <div class="container py-4">
+                <h2 id="occasions-title" class="mb-5">A Christmas keepsake for every woman in your life</h2>
+                <div class="row g-4">
+                    <div class="col-sm-6 col-lg"><div class="occasion"><h3>For Mum</h3><p>Thank her for every quiet moment she held the family together this year.</p></div></div>
+                    <div class="col-sm-6 col-lg"><div class="occasion"><h3>For Your Partner</h3><p>Turn the trips, dates, and inside jokes of 2026 into something she wears daily.</p></div></div>
+                    <div class="col-sm-6 col-lg"><div class="occasion"><h3>For a New Mum</h3><p>Celebrate her very first Christmas with baby using First Steps and Family Bond.</p></div></div>
+                    <div class="col-sm-6 col-lg"><div class="occasion"><h3>For a Sister or Friend</h3><p>Mark a graduation, a move, or a big new chapter she conquered in 2026.</p></div></div>
+                    <div class="col-sm-6 col-lg"><div class="occasion"><h3>For Grandmother</h3><p>Honour the generations gathered around the table this Christmas.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FAQ. Author: Pandi (AI-assisted) ===== -->
+        <section id="faq" class="py-5" aria-labelledby="faq-title">
+            <div class="container py-4">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2 id="faq-title" class="mb-4">Questions</h2>
+                        <div class="accordion" id="faqList">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">Is Aurelia a real shop?</button></h3>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqList"><div class="accordion-body">No. Aurelia is a fictional brand made for a college assignment, featuring a Christmas 2026 campaign concept. It is not based on a real business and it takes no orders.</div></div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">Why does this page ask about cookies?</button></h3>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqList"><div class="accordion-body">The page uses Google Analytics to count visits and clicks for the assignment. Nothing is recorded until you choose Accept. You can change your choice at any time with Cookie settings in the footer.</div></div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">What is recorded if I accept?</button></h3>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqList"><div class="accordion-body">Which buttons are clicked, how far down the page you scroll, which charms you choose, and whether the newsletter form is submitted. Google Analytics also receives basic visit data such as device type. The newsletter form is a demo: the email address you type is never sent or stored, and the page collects no names or email addresses.</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Newsletter (demo, email only). Author: [your name] (AI-assisted) ===== -->
+        <section id="newsletter" class="newsletter py-5" aria-labelledby="newsletter-title">
+            <div class="container py-4">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2 id="newsletter-title" class="mb-2">Get Christmas gifting reminders &amp; new charm drops</h2>
+                        <p class="measure mb-4">Join the Aurelia Christmas list for last-order dates and seasonal charm releases. This is a demo form for a college project, so nothing you type is sent or stored.</p>
+
+                        <form id="newsletter-form" class="row g-3 needs-validation" novalidate>
+                            <div class="col-md-8">
+                                <label for="nl-email" class="form-label fw-semibold">Email address</label>
+                                <input type="email" class="form-control" id="nl-email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+                            <div class="col-md-4 d-flex align-items-end">
+                                <button id="newsletter-submit" type="submit" class="btn btn-aurelia w-100">Join the list</button>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="nl-consent" required>
+                                    <label class="form-check-label" for="nl-consent">I agree to receive Christmas campaign emails from Aurelia (fictional).</label>
+                                    <div class="invalid-feedback">Please tick the box to subscribe.</div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div id="newsletter-success" class="newsletter-success d-none" role="status" aria-live="polite">
+                            <strong>Thank you.</strong> In a real shop you would now get our Christmas gift guide. As this is a demo, nothing was sent.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== Footer. Author: Pandi (AI-assisted) ===== -->
+    <footer>
+        <div class="container">
+            <p class="mb-2"><strong class="text-white">Aurelia is a fictional brand.</strong> This Christmas 2026 campaign page is a college project. It is not a real shop and it is not linked to any real business.</p>
+            <p class="mb-3">&copy; 2026 Aurelia (fictional)</p>
+            <button type="button" class="btn btn-link p-0 js-open-consent" data-bs-toggle="modal" data-bs-target="#consentModal">Cookie settings</button>
+        </div>
+    </footer>
+
+    <!-- ===== Demo modal ===== -->
+    <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"><h2 class="modal-title fs-4" id="demoTitle">Her Christmas bracelet is ready</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body">Aurelia is a fictional brand created for a college project, so no order is taken. Your Christmas bracelet design stays right here on the page.</div>
+                <div class="modal-footer"><button type="button" class="btn btn-aurelia" data-bs-dismiss="modal">Close</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Cookie settings modal ===== -->
+    <div class="modal fade" id="consentModal" tabindex="-1" aria-labelledby="consentTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"><h2 class="modal-title fs-4" id="consentTitle">Cookie settings</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body">
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="necessary" checked disabled>
+                        <label class="form-check-label" for="necessary"><strong>Necessary</strong><br><span class="text-body-secondary">Keeps the page working. Always on.</span></label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="analytics-switch">
+                        <label class="form-check-label" for="analytics-switch"><strong>Analytics</strong><br><span class="text-body-secondary">Lets Google Analytics count visits, clicks and scrolling.</span></label>
+                    </div>
+                </div>
+                <div class="modal-footer"><button type="button" class="btn btn-aurelia" id="save-consent">Save my choice</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Cookie banner ===== -->
+    <div id="consent-banner" class="d-none" role="region" aria-label="Cookie choices">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <div class="col-lg-7">
+                    <p class="mb-0"><strong>Can we count your visit?</strong> This college project uses Google Analytics to count visits and clicks. Nothing is recorded until you choose.</p>
+                </div>
+                <div class="col-lg-5 d-flex flex-wrap gap-2 justify-content-lg-end">
+                    <button type="button" class="btn btn-aurelia consent-btn" id="consent-accept">Accept</button>
+                    <button type="button" class="btn btn-aurelia consent-btn" id="consent-reject">Reject</button>
+                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#consentModal">Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        /* ===== Charm builder. Author: Pandi (AI-assisted) ===== */
+        (function () {
+            var MAX = 4;
+            var chosen = [];
+            var buttons = document.querySelectorAll('.charm-btn');
+            var slots = document.querySelectorAll('.slot');
+            var storyLine = document.getElementById('story-line');
+
+            function sentence(phrases) {
+                if (phrases.length === 0) return 'Pick a charm to write her Christmas gift card story.';
+                if (phrases.length === 1) return 'Her 2026 story so far: ' + phrases[0] + '.';
+                return 'Her 2026 story so far: ' + phrases.slice(0, -1).join(', ') + ' and ' + phrases[phrases.length - 1] + '.';
+            }
+
+            function draw(popIndex) {
+                slots.forEach(function (slot, i) {
+                    var charm = chosen[i];
+                    slot.classList.toggle('filled', !!charm);
+                    if (charm) slot.querySelector('.slot-icon').setAttribute('href', '#' + charm.icon);
+                    slot.classList.remove('pop');
+                    if (i === popIndex) { void slot.getBoundingClientRect(); slot.classList.add('pop'); }
+                });
+                buttons.forEach(function (btn) {
+                    var on = chosen.some(function (c) { return c.name === btn.dataset.name; });
+                    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+                });
+                storyLine.textContent = sentence(chosen.map(function (c) { return c.phrase; }));
+            }
+
+            buttons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var name = btn.dataset.name;
+                    var index = chosen.findIndex(function (c) { return c.name === name; });
+                    if (index > -1) {
+                        chosen.splice(index, 1);
+                        draw(-1);
+                    } else if (chosen.length < MAX) {
+                        chosen.push({ name: name, icon: btn.dataset.icon, phrase: btn.dataset.phrase });
+                        draw(chosen.length - 1);
+                        window.dataLayer.push({ event: 'charm_select', charm_name: name, charms_chosen: chosen.length });
+                    }
+                });
+            });
+
+            document.getElementById('reset-charms').addEventListener('click', function () {
+                chosen = [];
+                draw(-1);
+            });
+        })();
+
+        /* ===== Scroll depth tracker. Author: [your name] (AI-assisted) ===== */
+        (function () {
+            var MILESTONES = [25, 50, 75, 100];
+            var fired = {};
+            var ticking = false;
+
+            function currentDepth() {
+                var doc = document.documentElement;
+                var scrollable = doc.scrollHeight - window.innerHeight;
+                if (scrollable <= 0) { return 0; }
+                var percent = (window.pageYOffset / scrollable) * 100;
+                return Math.min(100, Math.max(0, percent));
+            }
+
+            function check() {
+                ticking = false;
+                var depth = currentDepth();
+                MILESTONES.forEach(function (mark) {
+                    var reached = mark === 100 ? depth >= 99.5 : depth >= mark;
+                    if (reached && !fired[mark]) {
+                        fired[mark] = true;
+                        window.dataLayer.push({
+                            event: 'scroll_depth',
+                            scroll_percent: mark,
+                            page_path: window.location.pathname
+                        });
+                    }
+                });
+                if (MILESTONES.every(function (m) { return fired[m]; })) {
+                    window.removeEventListener('scroll', onScroll);
+                    window.removeEventListener('resize', onScroll);
+                }
+            }
+
+            function onScroll() {
+                if (!ticking) {
+                    ticking = true;
+                    window.requestAnimationFrame(check);
+                }
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            check();
+        })();
+
+        /* ===== Cookie consent. Author: Pandi (AI-assisted) ===== */
+        (function () {
+            var KEY = 'aurelia_consent';
+            var banner = document.getElementById('consent-banner');
+            var analyticsSwitch = document.getElementById('analytics-switch');
+
+            function save(granted) {
+                var value = granted ? 'granted' : 'denied';
+                gtag('consent', 'update', { 'analytics_storage': value });
+                window.dataLayer.push({ event: 'consent_choice', analytics_consent: value });
+                try { localStorage.setItem(KEY, value); } catch (e) {}
+                analyticsSwitch.checked = granted;
+                banner.classList.add('d-none');
+            }
+
+            var stored = null;
+            try { stored = localStorage.getItem(KEY); } catch (e) {}
+            if (stored === 'granted' || stored === 'denied') {
+                analyticsSwitch.checked = (stored === 'granted');
+            } else {
+                banner.classList.remove('d-none');
+            }
+
+            document.getElementById('consent-accept').addEventListener('click', function () { save(true); });
+            document.getElementById('consent-reject').addEventListener('click', function () { save(false); });
+            document.getElementById('save-consent').addEventListener('click', function () {
+                save(analyticsSwitch.checked);
+                bootstrap.Modal.getInstance(document.getElementById('consentModal')).hide();
+            });
+        })();
+
+        /* ===== Dark / light switch. Author: [your name] (AI-assisted) ===== */
+        (function () {
+            var root = document.documentElement;
+            var toggle = document.getElementById('theme-toggle');
+
+            function label(theme) {
+                var text = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+                toggle.setAttribute('aria-label', text);
+                toggle.setAttribute('title', text);
+            }
+            label(root.getAttribute('data-bs-theme'));
+
+            toggle.addEventListener('click', function () {
+                var next = root.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+                root.setAttribute('data-bs-theme', next);
+                try { localStorage.setItem('aurelia-theme', next); } catch (e) {}
+                label(next);
+            });
+        })();
+
+        /* ===== Newsletter form. Author: [your name] (AI-assisted) ===== */
+        (function () {
+            var form = document.getElementById('newsletter-form');
+            var success = document.getElementById('newsletter-success');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                if (!form.checkValidity()) {
+                    event.stopPropagation();
+                    form.classList.add('was-validated');
+                    return;
+                }
+                window.dataLayer.push({ event: 'newsletter_signup', form_id: 'newsletter-form', form_location: 'newsletter_section' });
+                form.classList.add('d-none');
+                success.classList.remove('d-none');
+            });
+        })();
+    </script>
+</body>
+</html>
